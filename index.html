@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>DHIS 2 Pivot Tables</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1"/>
+</head>
+<body>
+<div id="init">
+    <div id="inittext"><span class="brand">DHIS 2</span>Pivot Tables</div>
+    <div class="spinner"></div>
+</div>
+
+<script src="jquery.min.js"></script>
+<script src="jquery-migrate.min.js"></script>
+
+<script type="text/javascript" src="dhis2/jquery.calendars.min.js"></script>
+<script type="text/javascript" src="dhis2/jquery.calendars.plus.min.js"></script>
+<script type="text/javascript" src="dhis2/jquery.calendars.picker.min.js"></script>
+<script type="text/javascript" src="dhis2/dhis2.util.js"></script>
+<script type="text/javascript" src="dhis2/date.js"></script>
+
+<script type="text/javascript" src="extjs/ext-all.js"></script>
+<script type="text/javascript" src="extjs/ext-ux/layout/component/form/MultiSelect.js"></script>
+<script type="text/javascript" src="extjs/ext-ux/form/MultiSelect.js"></script>
+<script type="text/javascript" src="extjs/ext-overrides/ext-override-loadmask.js"></script>
+
+<script src="app.js"></script>
+<script>
+var resetTime_int;
+var message = "Timed Out\n\n We noticed you have been inactive for a while.\n Please check on Login to start your work";
+function resetTimer(){
+    if(resetTime_int) window.clearTimeout(resetTime_int)
+    resetTime_int=window.setTimeout(function (){
+                 alert(message);
+                 window.location.href = '../dhis-web-commons-security/logout.action';
+    }, 15*60*1000);
+}
+
+resetTimer()
+document.onmousemove=resetTimer;
+document.onkeyup=resetTimer;
+
+</script>
+
+</body>
+</html>

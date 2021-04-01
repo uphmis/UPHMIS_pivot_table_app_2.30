@@ -1,0 +1,13 @@
+*.iml
+node_modules/
+lib/
+npm-debug.log
+yarn-error.log
+.idea
+.vscode
+*.gzip
+build/
+target/
+.DS_Store
+manifest.webapp
+package-lock.json
